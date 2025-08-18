@@ -1,0 +1,246 @@
+/* Global background that covers entire page when scrolling */
+html {
+  background-color: #f3f4f6;
+  min-height: 100%;
+}
+
+body {
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Main wrapper for the entire page */
+.coursesWrapper {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Header section with filters */
+.coursesHeader {
+  padding: 2rem;
+  background-color: #f3f4f6;
+}
+
+.headerContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.headerSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f8f9fa;
+}
+
+.headerSection h2 {
+  margin: 0;
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.addCourseBtn {
+  background: #6366f1;
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addCourseBtn:hover {
+  background: #4f46e5;
+}
+
+.addCourseBtn:active {
+  background: #3730a3;
+}
+
+.filterContainer {
+  padding: 2rem;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.searchContainer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  min-width: 400px;
+}
+
+.filterSelect {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: border-color 0.2s;
+  background: white;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 1px #6366f1;
+}
+
+.filterSelect::placeholder {
+  color: #6b7280;
+}
+
+.searchBtn {
+  background: #6366f1;
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 0.875rem;
+  min-width: 100px;
+}
+
+.searchBtn:hover {
+  background: #4f46e5;
+}
+
+.searchBtn:active {
+  background: #3730a3;
+}
+
+/* Cards section with different background */
+.cardsSection {
+  background-color: #fafbfc;
+  min-height: calc(100vh - 300px);
+  padding: 2rem;
+  padding-top: 0;
+}
+
+.cardsContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #fafbfc;
+  border-radius: 12px;
+  padding: 2rem;
+  min-height: 400px;
+}
+
+.loadMoreTrigger {
+  height: 20px;
+  margin-top: 2rem;
+  background: transparent;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .coursesHeader {
+    padding: 1rem;
+  }
+
+  .cardsSection {
+    padding: 1rem;
+    padding-top: 0;
+  }
+
+  .cardsContainer {
+    padding: 1rem;
+  }
+
+  .headerSection {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .headerSection h2 {
+    font-size: 1.5rem;
+  }
+
+  .filterContainer {
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .searchContainer {
+    flex-direction: column;
+    gap: 0.75rem;
+    min-width: auto;
+    width: 100%;
+  }
+
+  .filterSelect {
+    width: 100%;
+  }
+
+  .searchBtn {
+    width: 100%;
+    padding: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .coursesHeader {
+    padding: 0.5rem;
+  }
+
+  .cardsSection {
+    padding: 0.5rem;
+    padding-top: 0;
+  }
+
+  .cardsContainer {
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+
+  .headerContent {
+    border-radius: 8px;
+  }
+
+  .headerSection {
+    padding: 1rem;
+  }
+
+  .headerSection h2 {
+    font-size: 1.25rem;
+  }
+
+  .addCourseBtn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8rem;
+  }
+
+  .filterContainer {
+    padding: 1rem;
+  }
+}
+
+/* Focus States for Accessibility */
+.addCourseBtn:focus,
+.searchBtn:focus,
+.filterSelect:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}

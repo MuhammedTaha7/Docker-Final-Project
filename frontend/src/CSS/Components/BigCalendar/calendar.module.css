@@ -1,0 +1,222 @@
+/* Calendar styles + BaseCard (css‑modules) */
+.calendarWrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ebf5ff 0%, #fff 40%, #f3f5ff 100%);
+  padding: 2rem;
+  font-family: "Inter", sans-serif;
+}
+.calendarContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.navBtn {
+  background: #ffffff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.navBtn:hover {
+  background: #f3f4f6;
+}
+.weekRange {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+.calendarGrid {
+  display: grid;
+  grid-template-columns: 80px repeat(7, 1fr);
+  border: 1px solid #e5e7eb;
+  border-radius: 0rem 0rem 1.5rem 1.5rem;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+}
+.timeColumn {
+  background: #f9fafb;
+  border-right: 1px solid #e5e7eb;
+}
+.timeSlot {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+  border-bottom: 1px solid #f3f4f6;
+}
+.full {
+  background: #f3f4f6;
+  font-weight: 700;
+  color: #374151;
+}
+.dayColumn {
+  position: relative;
+  border-right: 1px solid #e5e7eb;
+}
+.dayColumn:last-child {
+  border-right: none;
+}
+.daySlot {
+  height: 32px;
+  border-bottom: 1px solid #f3f4f6;
+  transition: background 0.15s;
+}
+.daySlot:hover {
+  background: #e0f2fe;
+}
+.isToday .daySlot {
+  background: #ecfdf5;
+}
+.isActive .daySlot {
+  background: #dbeafe;
+}
+.eventBlock {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  border-left: 4px solid;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.eventBlock:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  z-index: 30;
+}
+.eventContent {
+  position: relative;
+  color: #ffffff;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+.eventType {
+  font-size: 0.6rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 0 0.25rem;
+  border-radius: 9999px;
+  margin-bottom: 0.25rem;
+}
+.eventTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.eventProfessor,
+.eventRoom {
+  font-size: 0.6rem;
+  opacity: 0.9;
+}
+.eventTime {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+  font-size: 0.65rem;
+  text-align: center;
+}
+.eventIconMini {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-size: 0.75rem;
+}
+.eventHoverCard {
+  position: fixed;
+  z-index: 50;
+  pointer-events: none;
+}
+.baseCard {
+  background: #fff;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+.baseCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e1;
+}
+.baseCard.gradient {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.baseCard.outline {
+  background: transparent;
+  border: 2px solid #e5e7eb;
+}
+.baseCardHeader {
+  padding: 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.baseCardTitleSection {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.baseCardBody {
+  padding: 1.5rem;
+}
+.daysHeader {
+  display: grid;
+  grid-template-columns: 80px repeat(7, 1fr);
+  border: 1px solid #e5e7eb;
+  border-radius: 1.5rem 1.5rem 0 0;
+  overflow: hidden;
+  background: #f9fafb;
+}
+
+.dayHeaderCell {
+  text-align: center;
+  padding: 0.75rem 0.25rem;
+  border-left: 1px solid #e5e7eb;
+}
+.dayHeaderCell:first-child {
+  border-left: none;
+}
+
+.dayLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+.dayNumber {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #374151;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+.today {
+  background: #22c55e;
+  color: #fff;
+}
+.activeDay {
+  background: #3b82f6;
+  color: #fff;
+}

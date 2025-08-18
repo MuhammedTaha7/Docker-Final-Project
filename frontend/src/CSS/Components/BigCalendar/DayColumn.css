@@ -1,0 +1,31 @@
+.day-column {
+  position: relative;
+  border-right: 1px solid #e2e8f0;
+}
+
+.day-column:last-child {
+  border-right: none;
+}
+
+.day-column .time-slot {
+  height: 32px;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.15s ease;
+}
+
+.day-column .time-slot:hover {
+  background: #dbeafe;
+}
+
+.day-column .time-slot.full-hour {
+  border-bottom: 1px solid #cbd5e1;
+  background: #f8fafc;
+}
+
+.day-column.today .time-slot {
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.day-column.active .time-slot {
+  background: rgba(59, 130, 246, 0.08);
+}

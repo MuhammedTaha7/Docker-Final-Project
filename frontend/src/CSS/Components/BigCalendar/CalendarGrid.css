@@ -1,0 +1,16 @@
+.calendar-grid {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.calendar-body {
+  display: flex;
+  flex: 1;
+}
+
+.days-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  flex: 1;
+}

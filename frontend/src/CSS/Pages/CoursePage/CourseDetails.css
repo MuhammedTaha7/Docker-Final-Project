@@ -1,0 +1,260 @@
+/* Enhanced Course Header Section */
+.course-header-section {
+  margin-bottom: 20px;
+}
+
+.course-main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.course-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.course-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.course-code {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.course-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #ff9800;
+  font-weight: 600;
+}
+
+.star-icon {
+  color: #ff9800;
+}
+
+/* Enhanced Description */
+.course-description-text {
+  margin: 15px 0;
+}
+
+.course-description-text p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Enhanced Progress Section */
+.progress-section {
+  margin-top: 25px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.progress-label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.progress-percentage {
+  font-weight: 700;
+  color: #8d8cf6;
+  font-size: 16px;
+}
+
+.progress-milestones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.milestone {
+  font-size: 11px;
+  color: #bbb;
+  position: relative;
+}
+
+.milestone.completed {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+/* Enhanced Course Data Grid */
+.course-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.details-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Enhanced Course Detail Rows */
+.course-detail-row {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.course-detail-row:last-child {
+  border-bottom: none;
+}
+
+.course-detail-icon {
+  color: #8d8cf6;
+  width: 20px;
+  text-align: center;
+}
+
+.course-detail-text {
+  color: #444;
+  font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .course-details-container {
+    flex-direction: column;
+  }
+
+  .course-details-container > * {
+    width: 100%;
+  }
+
+  .divider {
+    height: 2px;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .course-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Chart Box Additional Content */
+.chart-additional-content {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Progress Overview */
+.progress-overview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(134, 132, 242, 0.355) 0%, rgba(141, 140, 246, 0.04) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(141, 140, 246, 0.15);
+}
+
+.progress-main-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.progress-main-label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.progress-main-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #8d8cf6;
+}
+
+.progress-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 20px;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  background: #4caf50;
+  border-radius: 50%;
+}
+
+.status-text {
+  font-size: 11px;
+  color: #4caf50;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Course Stats Grid */
+.course-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.Course-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+  background: linear-gradient(135deg, rgba(134, 132, 242, 0.355) 0%, rgba(141, 140, 246, 0.04) 100%);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #666;
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.stat-value.primary {
+  color: #8d8cf6;
+}
+
+.stat-value.success {
+  color: #4caf50;
+}
+
+.stat-value.warning {
+  color: #ff9800;
+}

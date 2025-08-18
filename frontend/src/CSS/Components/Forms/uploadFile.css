@@ -1,0 +1,134 @@
+.media-upload-container {
+    width: 400px;
+    margin: 40px auto;
+    background: white;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+  }
+  
+  .media-upload-container h2 {
+    margin-bottom: 8px;
+    font-size: 22px;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+  }
+  
+  .upload-dropzone {
+    border: 2px dashed #a4b0f5;
+    background: #f0f2ff;
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .drop-icon {
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+  
+  .or-label {
+    display: block;
+    margin: 8px 0;
+    font-size: 14px;
+    color: #aaa;
+  }
+  
+  .browse-btn {
+    display: inline-block;
+    color: #4a6cf7;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .browse-btn input {
+    display: none;
+  }
+  
+  .note {
+    font-size: 13px;
+    margin-top: 12px;
+    color: #666;
+  }
+  
+  .file-list {
+    margin-top: 16px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .file-item {
+    display: flex;
+    align-items: center;
+    background: #f6f8fc;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    justify-content: space-between;
+  }
+  
+  .file-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .file-name {
+    flex-grow: 1;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .remove-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #888;
+    cursor: pointer;
+  }
+  
+  .remove-btn:hover {
+    color: #e74c3c;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  
+  .cancel-btn,
+  .next-btn {
+    padding: 8px 18px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .cancel-btn {
+    background: #f1f1f1;
+    color: #444;
+  }
+  
+  .cancel-btn:hover {
+    background: #ddd;
+  }
+  
+  .next-btn {
+    background: #4a6cf7;
+    color: white;
+  }
+  
+  .next-btn:hover {
+    background: #3c5ce7;
+  }
+  

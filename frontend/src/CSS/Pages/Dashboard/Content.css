@@ -1,0 +1,134 @@
+.content {
+  display: flex;
+  padding: 15px 15px 0 15px;
+  flex-direction: column;
+  overflow: auto;
+  flex-grow: 1;
+}
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(auto);
+    gap: 20px;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.filter-group {
+  display: flex;
+  gap: 15px;
+}
+.filter-select {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+.filter-select:hover {
+  border-color: #0073ff;
+}
+.filter-select:focus {
+  outline: none;
+  border-color: #0073ff;
+  box-shadow: 0 0 0 2px rgba(0, 115, 255, 0.2);
+}
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 100%;
+  overflow: hidden;
+}
+@media (min-width: 1200px) {
+  .courses-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 1199px) {
+  .courses-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .courses-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.courses-header {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.header-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #0073ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.search-btn:hover {
+  background: #0056b3;
+}
+
+.course-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.course-details-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: rgb(0, 0, 0);
+}
+
+.course-details-table td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.course-details-table tr:last-child td {
+  border-bottom: none;
+}
+
+.lecturer-button {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.lecturer-button:hover {
+  background-color: #1e88e5;
+}

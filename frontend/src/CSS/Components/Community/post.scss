@@ -1,0 +1,120 @@
+.post {
+    -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    border-radius: 20px;
+    background-color: themed("bg");
+    color: themed("textColor");
+
+    .postContainer {
+      padding: 20px;
+
+      .user {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .userInfo {
+          display: flex;
+          gap: 20px;
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          .details {
+            display: flex;
+            flex-direction: column;
+
+            .name {
+              font-weight: 500;
+            }
+
+            .role {
+              font-size: 14px;
+              color: gray;
+              font-weight: 600;
+              margin-left: 8px;
+            }
+
+            .date {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      .content {
+        margin: 20px 0px;
+
+        img {
+          width: 100%;
+          max-height: 500px;
+          object-fit: cover;
+          margin-top: 20px;
+        }
+        .sharedFile {
+          margin-top: 10px;
+          padding: 8px 12px;
+          background-color: #d2e6ff;
+          border-radius: 6px;
+          display: inline-block;
+        
+          a {
+            color: #333;
+            font-size: 14px;
+            text-decoration: none;
+            font-weight: 500;
+        
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+          font-size: 14px;
+        }
+      }
+    }
+    .more {
+      position: relative;
+    }
+    
+    .dropdownMenu {
+      position: absolute;
+      top: 25px;
+      right: 0;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 6px 10px;
+      border-radius: 5px;
+      z-index: 100;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    .menuItem {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 4px 6px;
+    }
+    
+    .menuItem:hover {
+      background-color: #f0f0f0;
+    }
+  }

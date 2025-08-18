@@ -1,0 +1,119 @@
+.comments {
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .write {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 20px 0px;
+
+      input {
+        flex: 5;
+        padding: 10px;
+        border: 1px solid themed("border");
+        background-color: transparent;
+        color: themed("textColor");
+        border-radius: 8px;
+        
+        &:focus {
+          outline: none;
+          border-color: #5271ff;
+        }
+        
+        &:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+      }
+
+      button {
+        border: none;
+        background-color: #5271ff;
+        color: white;
+        padding: 10px 16px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.2s, opacity 0.2s;
+        font-weight: 500;
+        
+        &:hover:not(:disabled) {
+          background-color: #4056d4;
+        }
+        
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+          background-color: #ccc;
+        }
+      }
+    }
+
+    // Loading and empty states
+    .loading, .no-comments {
+      text-align: center;
+      color: themed("textColorSoft");
+      font-style: italic;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    .comment {
+      margin: 30px 0px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+
+      .info {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        align-items: flex-start;
+
+        .username {
+          font-weight: 500;
+          color: themed("textColor");
+          font-size: 14px;
+        }
+
+        .comment-text {
+          color: themed("textColorSoft");
+          margin: 4px 0;
+          line-height: 1.4;
+          word-wrap: break-word;
+        }
+      }
+
+      .comment-meta {
+        flex: 1;
+        align-self: flex-start;
+        margin-top: 2px;
+        
+        .comment-date {
+          color: gray;
+          font-size: 12px;
+          white-space: nowrap;
+          cursor: help; // Show it's interactive (has tooltip)
+          
+          &:hover {
+            color: themed("textColor");
+          }
+        }
+      }
+
+      // Legacy support - if you still have old .date class somewhere
+      .date {
+        flex: 1;
+        align-self: center;
+        color: gray;
+        font-size: 12px;
+      }
+    }
+  }

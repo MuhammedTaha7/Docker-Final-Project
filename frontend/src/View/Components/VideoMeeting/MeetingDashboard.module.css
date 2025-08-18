@@ -1,0 +1,317 @@
+/* MeetingDashboard.module.css */
+
+/* Main container styles */
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 50%, #faf5ff 100%);
+  padding: 32px;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logoContainer {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerTitle {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0;
+}
+
+.userRole {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.nextMeetingBadge {
+  background: #1f2937;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nextMeetingText {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.settingsIcon {
+  width: 28px;
+  height: 28px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.settingsIcon:hover {
+  color: #374151;
+}
+
+/* Time display styles */
+.timeDisplay {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.currentTime {
+  font-size: 5rem;
+  font-weight: 300;
+  color: #1f2937;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.currentDate {
+  font-size: 24px;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+/* Quick actions grid */
+.quickActionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+  max-width: 1400px;
+  margin: 0 auto 48px auto;
+}
+
+.actionButton {
+  position: relative;
+  overflow: hidden;
+  padding: 32px 28px;
+  border-radius: 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transform: translateY(0);
+  text-align: left;
+  min-height: 180px;
+}
+
+.actionButton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+}
+
+.actionIconContainer {
+  background: rgba(255, 255, 255, 0.25);
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.actionTitle {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  margin: 0 0 8px 0;
+}
+
+.actionSubtitle {
+  font-size: 15px;
+  opacity: 0.9;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Upcoming meetings section */
+.upcomingMeetingsContainer {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.upcomingMeetingsHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.upcomingMeetingsIcon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upcomingMeetingsTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0;
+}
+
+.meetingsList {
+  display: grid;
+  gap: 16px;
+}
+
+.meetingItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #f3f4f6;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.meetingItem:hover {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.meetingItemLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.meetingItemIcon {
+  min-width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.meetingItemTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 4px 0;
+}
+
+.meetingItemTime {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 4px 0;
+}
+
+.meetingCourseInfo {
+  font-size: 13px;
+  color: #4b5563;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.joinMeetingButton {
+  background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.joinMeetingButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Gradient background classes for action buttons */
+.gradientOrange {
+  background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+}
+
+.gradientBlue {
+  background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
+}
+
+.gradientPurple {
+  background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+}
+
+.gradientYellow {
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+  
+  .header {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  .userRole {
+    display: none;
+  }
+  
+  .nextMeetingBadge {
+    display: none;
+  }
+  
+  .currentTime {
+    font-size: 3.5rem;
+  }
+  
+  .currentDate {
+    font-size: 18px;
+  }
+  
+  .quickActionsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .actionButton {
+    min-height: 140px;
+    padding: 24px 20px;
+  }
+}

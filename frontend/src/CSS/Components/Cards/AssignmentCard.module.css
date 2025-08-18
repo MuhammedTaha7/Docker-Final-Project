@@ -1,0 +1,274 @@
+.assignmentCard {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.assignmentCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.assignmentCard.completed {
+  opacity: 0.75;
+}
+
+.assignmentCard.completed .assignmentTitle {
+  text-decoration: line-through;
+}
+
+.assignmentCard.overdue {
+  border-color: #fecaca;
+  background: #fef2f2;
+  animation: pulse 2s infinite;
+}
+
+.assignmentCard.dueSoon {
+  border-color: #fed7aa;
+  background: #fffbeb;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.9; }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.courseInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.courseDot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.courseName {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #6b7280;
+  letter-spacing: 0.025em;
+}
+
+.cardActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.actionIcon {
+  width: 1rem;
+  height: 1rem;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.actionIcon:hover {
+  color: #6b7280;
+}
+
+.checkbox {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #10b981;
+  transition: all 0.2s ease;
+}
+
+.checkIcon:hover {
+  transform: scale(1.1);
+  color: #059669;
+}
+
+.emptyCheck {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #d1d5db;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.emptyCheck:hover {
+  border-color: #10b981;
+  background: #f0fdf4;
+}
+
+.cardBody {
+  margin-bottom: 1rem;
+}
+
+.assignmentTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.4;
+  margin: 0 0 0.75rem 0;
+}
+
+.dueInfo {
+  margin-bottom: 1rem;
+}
+
+.dueDateRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.clockIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: #6b7280;
+}
+
+.dueDate {
+  font-size: 0.875rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.urgencyBadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.overdueBadge {
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: #fee2e2;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid #fecaca;
+}
+
+.dueSoonBadge {
+  color: #d97706;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: #fef3c7;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid #fed7aa;
+}
+
+.normalBadge {
+  color: #6b7280;
+  background: #f9fafb;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid #e5e7eb;
+}
+
+.urgencyIcon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.progressSection {
+  margin-bottom: 0.75rem;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.progressLabel {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.progressValue {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.progressBarContainer {
+  width: 100%;
+  height: 0.5rem;
+  background: #f3f4f6;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: 0.25rem;
+  transition: all 0.6s ease;
+  background: linear-gradient(90deg, currentColor, currentColor);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.subjectIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: #9ca3af;
+}
+
+.instructor {
+  font-size: 0.8125rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .assignmentCard {
+    padding: 1rem;
+  }
+  
+  .assignmentTitle {
+    font-size: 0.9375rem;
+  }
+  
+  .courseInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .cardActions {
+    gap: 0.5rem;
+  }
+}

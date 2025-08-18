@@ -1,0 +1,15 @@
+# Ignore Node.js dependencies
+**/node_modules
+
+# Ignore Java build files
+**/target/
+
+# Ignore Maven wrapper files
+**/.mvn/wrapper/maven-wrapper.jar
+
+# Ignore IDE files (like IntelliJ)
+.idea/
+.vscode/
+
+# Ignore environment variables
+.env

@@ -1,0 +1,29 @@
+.weekly-calendar {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #faf5ff 100%);
+  padding: 2rem;
+}
+
+.calendar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.calendar-card {
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .weekly-calendar {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .weekly-calendar {
+    padding: 0.5rem;
+  }
+}

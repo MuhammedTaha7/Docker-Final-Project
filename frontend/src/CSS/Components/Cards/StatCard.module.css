@@ -1,0 +1,222 @@
+/* StatCard.module.css */
+
+/* Base card styles */
+.statCard {
+  border-radius: 16px;
+  padding: 1.5rem;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.statCardClickable {
+  cursor: pointer;
+}
+
+.statCardClickable:active {
+  transform: translateY(0);
+}
+
+.statCardContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.statCardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.statCardTitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.statCardValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  line-height: 1;
+}
+
+.statCardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  flex-shrink: 0;
+}
+
+.statCardIcon svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Size Variants - Dramatic Differences */
+.compact {
+  padding: 0.75rem !important;
+  min-height: 80px !important;
+  border-radius: 8px !important;
+}
+
+.compact .statCardValue {
+  font-size: 1.25rem !important;
+}
+
+.compact .statCardTitle {
+  font-size: 0.625rem !important;
+  font-weight: 400 !important;
+}
+
+.compact .statCardIcon {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.compact .statCardIcon svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.compact .statCardContent {
+  gap: 0.5rem !important;
+}
+
+.large {
+  padding: 3rem !important;
+  min-height: 180px !important;
+  border-radius: 20px !important;
+}
+
+.large .statCardValue {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+}
+
+.large .statCardTitle {
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+}
+
+.large .statCardIcon {
+  width: 96px !important;
+  height: 96px !important;
+}
+
+.large .statCardIcon svg {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+.large .statCardContent {
+  gap: 1rem !important;
+}
+
+/* Extra Large Size */
+.xl {
+  padding: 4rem !important;
+  min-height: 240px !important;
+  border-radius: 24px !important;
+}
+
+.xl .statCardValue {
+  font-size: 5rem !important;
+  font-weight: 900 !important;
+}
+
+.xl .statCardTitle {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+}
+
+.xl .statCardIcon {
+  width: 120px !important;
+  height: 120px !important;
+}
+
+.xl .statCardIcon svg {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+.xl .statCardContent {
+  gap: 1.5rem !important;
+}
+
+/* Default size - explicit styles */
+.default {
+  padding: 0.5rem 1.5rem;
+  min-height: 120px;
+  border-radius: 12px;
+}
+
+.default .statCardValue {
+  font-size: 2.25rem;
+}
+
+.default .statCardTitle {
+  font-size: 0.875rem;
+}
+
+.default .statCardIcon {
+  width: 56px;
+  height: 56px;
+}
+
+.default .statCardIcon svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .statCard {
+    padding: 1.25rem;
+    min-height: 100px;
+  }
+  
+  .statCardValue {
+    font-size: 2rem;
+  }
+  
+  .statCardIcon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .statCardIcon svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .statCardContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .statCardInfo {
+    align-items: center;
+  }
+}

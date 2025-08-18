@@ -1,0 +1,851 @@
+.groupPage {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+
+  .backButton {
+    margin-bottom: 20px;
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: none;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 14px;
+
+      &:hover {
+        background: #f8fafc;
+        border-color: #cbd5e1;
+        color: #475569;
+      }
+
+      svg {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    text-align: center;
+
+    .loadingSpinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #e2e8f0;
+      border-top: 3px solid #3b82f6;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: #64748b;
+      font-size: 16px;
+    }
+  }
+
+  .error {
+    text-align: center;
+    padding: 80px 20px;
+
+    h2 {
+      color: #ef4444;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: #64748b;
+      margin-bottom: 24px;
+    }
+
+    button {
+      padding: 12px 24px;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+
+      &:hover {
+        background: #2563eb;
+      }
+    }
+  }
+
+  .groupHeader {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+
+    .groupBanner {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .bannerOverlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      }
+    }
+
+    .groupMainInfo {
+      padding: 24px;
+
+      .groupBasicInfo {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 16px;
+
+        .groupTitleSection {
+          flex: 1;
+
+          h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0 0 12px 0;
+            line-height: 1.2;
+          }
+
+          .groupMeta {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+
+            span {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              font-size: 14px;
+              color: #64748b;
+
+              svg {
+                font-size: 16px;
+                color: #94a3b8;
+              }
+            }
+
+            .groupType {
+              font-weight: 500;
+              padding: 4px 8px;
+              border-radius: 12px;
+              background: #f1f5f9;
+              color: #475569;
+            }
+          }
+        }
+
+        .groupActions {
+          display: flex;
+          gap: 12px;
+          flex-shrink: 0;
+
+          button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+
+            svg {
+              font-size: 16px;
+            }
+
+            &.membershipBtn {
+              &.join {
+                background: #3b82f6;
+                color: white;
+                border: none;
+
+                &:hover {
+                  background: #2563eb;
+                  transform: translateY(-1px);
+                }
+              }
+
+              &.leave {
+                background: #ef4444;
+                color: white;
+                border: none;
+
+                &:hover {
+                  background: #dc2626;
+                }
+              }
+            }
+
+            &.inviteBtn {
+              background: #10b981;
+              color: white;
+              border: none;
+
+              &:hover {
+                background: #059669;
+              }
+            }
+
+            &.editGroupBtn {
+              background: #f8fafc;
+              color: #475569;
+              border: 1px solid #e2e8f0;
+
+              &:hover {
+                background: #f1f5f9;
+                border-color: #cbd5e1;
+              }
+            }
+          }
+        }
+      }
+
+      .groupDescription {
+        p {
+          font-size: 16px;
+          line-height: 1.6;
+          color: #475569;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .groupNavigation {
+    display: flex;
+    gap: 4px;
+    background: white;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+
+    .navTab {
+      flex: 1;
+      padding: 12px 24px;
+      border: none;
+      background: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: #f8fafc;
+        color: #475569;
+      }
+
+      &.active {
+        background: #3b82f6;
+        color: white;
+      }
+    }
+  }
+
+  .tabContent {
+    .postsTab {
+      .createPostSection {
+        margin-bottom: 24px;
+      }
+
+      .postsContainer {
+        .emptyState {
+          text-align: center;
+          padding: 60px 20px;
+          background: white;
+          border-radius: 12px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+          .emptyIcon {
+            font-size: 48px;
+            color: #cbd5e1;
+            margin-bottom: 16px;
+          }
+
+          h3 {
+            font-size: 20px;
+            color: #1e293b;
+            margin-bottom: 8px;
+          }
+
+          p {
+            color: #64748b;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    .membersTab {
+      .membersHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        padding: 0 4px;
+
+        h3 {
+          font-size: 20px;
+          font-weight: 600;
+          color: #1e293b;
+          margin: 0;
+        }
+
+        .inviteBtn {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 10px 16px;
+          background: #10b981;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          font-size: 14px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background: #059669;
+          }
+
+          svg {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .membersList {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 16px;
+
+        .memberCard {
+          background: white;
+          border-radius: 12px;
+          padding: 20px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          position: relative;
+          transition: all 0.2s ease;
+
+          &:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          }
+
+          .memberAvatar {
+            img {
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+
+          .memberInfo {
+            flex: 1;
+
+            .memberName {
+              font-size: 16px;
+              font-weight: 600;
+              color: #1e293b;
+              margin-bottom: 4px;
+              display: block;
+            }
+
+            .roleBadge {
+              display: inline-flex;
+              align-items: center;
+              gap: 4px;
+              padding: 2px 8px;
+              border-radius: 12px;
+              font-size: 12px;
+              font-weight: 500;
+              margin-bottom: 4px;
+
+              svg {
+                font-size: 14px;
+              }
+
+              &.founder {
+                background: #fbbf24;
+                color: #92400e;
+              }
+
+              &.admin {
+                background: #a855f7;
+                color: white;
+              }
+
+              &.member {
+                background: #e2e8f0;
+                color: #475569;
+              }
+            }
+
+            .memberJoinDate {
+              font-size: 12px;
+              color: #64748b;
+            }
+          }
+
+          .memberActions {
+            position: relative;
+
+            .menuBtn {
+              padding: 6px;
+              background: none;
+              border: 1px solid #e2e8f0;
+              border-radius: 6px;
+              color: #64748b;
+              cursor: pointer;
+              transition: all 0.2s ease;
+
+              &:hover {
+                background: #f8fafc;
+                border-color: #cbd5e1;
+              }
+
+              svg {
+                font-size: 16px;
+              }
+            }
+
+            .memberMenu {
+              position: absolute;
+              top: 100%;
+              right: 0;
+              background: white;
+              border: 1px solid #e2e8f0;
+              border-radius: 8px;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+              z-index: 10;
+              min-width: 160px;
+              overflow: hidden;
+
+              button {
+                width: 100%;
+                padding: 10px 14px;
+                border: none;
+                background: none;
+                text-align: left;
+                cursor: pointer;
+                font-size: 13px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                transition: background-color 0.2s ease;
+
+                svg {
+                  font-size: 16px;
+                  color: #64748b;
+                }
+
+                &:hover {
+                  background: #f8fafc;
+                }
+
+                &.removeBtn {
+                  color: #ef4444;
+
+                  svg {
+                    color: #ef4444;
+                  }
+
+                  &:hover {
+                    background: #fef2f2;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .aboutTab {
+      .aboutSection {
+        background: white;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 24px;
+
+        h3 {
+          font-size: 20px;
+          font-weight: 600;
+          color: #1e293b;
+          margin-bottom: 16px;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 1.6;
+          color: #475569;
+          margin: 0;
+        }
+      }
+
+      .groupStats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+
+        .statCard {
+          background: white;
+          border-radius: 12px;
+          padding: 24px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          transition: all 0.2s ease;
+
+          &:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          }
+
+          svg {
+            font-size: 24px;
+            color: #3b82f6;
+          }
+
+          .statInfo {
+            .statNumber {
+              display: block;
+              font-size: 20px;
+              font-weight: 700;
+              color: #1e293b;
+              margin-bottom: 4px;
+            }
+
+            .statLabel {
+              font-size: 14px;
+              color: #64748b;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Modal Styles
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+
+    .modalContent {
+      background: white;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 500px;
+      max-height: 90vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+
+      &.large {
+        max-width: 600px;
+      }
+
+      .modalHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px;
+        border-bottom: 1px solid #e2e8f0;
+
+        h3 {
+          font-size: 18px;
+          font-weight: 600;
+          color: #1e293b;
+          margin: 0;
+        }
+
+        .closeBtn {
+          padding: 8px;
+          background: none;
+          border: none;
+          border-radius: 6px;
+          color: #64748b;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background: #f8fafc;
+            color: #475569;
+          }
+
+          svg {
+            font-size: 20px;
+          }
+        }
+      }
+
+      .modalBody {
+        flex: 1;
+        overflow-y: auto;
+        padding: 24px;
+
+        .editForm {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          .formGroup {
+            label {
+              display: block;
+              font-size: 14px;
+              font-weight: 500;
+              color: #374151;
+              margin-bottom: 6px;
+            }
+
+            input,
+            textarea,
+            select {
+              width: 100%;
+              padding: 10px 12px;
+              border: 1px solid #d1d5db;
+              border-radius: 8px;
+              font-size: 14px;
+              transition: border-color 0.2s ease;
+
+              &:focus {
+                outline: none;
+                border-color: #3b82f6;
+                box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+              }
+            }
+
+            textarea {
+              resize: vertical;
+              min-height: 80px;
+            }
+          }
+        }
+      }
+
+      .modalFooter {
+        display: flex;
+        gap: 12px;
+        padding: 20px 24px;
+        border-top: 1px solid #e2e8f0;
+        justify-content: flex-end;
+
+        button {
+          padding: 10px 20px;
+          border-radius: 8px;
+          font-size: 14px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &.cancelBtn {
+            background: white;
+            color: #64748b;
+            border: 1px solid #d1d5db;
+
+            &:hover {
+              background: #f8fafc;
+              border-color: #9ca3af;
+            }
+          }
+
+          &.saveBtn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+
+            &:hover {
+              background: #2563eb;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .groupPage {
+    padding: 16px;
+
+    .groupHeader {
+      .groupBanner {
+        height: 180px;
+      }
+
+      .groupMainInfo {
+        padding: 20px;
+
+        .groupBasicInfo {
+          flex-direction: column;
+          gap: 16px;
+
+          .groupTitleSection {
+            h1 {
+              font-size: 24px;
+            }
+
+            .groupMeta {
+              gap: 16px;
+            }
+          }
+
+          .groupActions {
+            align-self: stretch;
+
+            button {
+              flex: 1;
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+
+    .groupNavigation {
+      .navTab {
+        padding: 10px 16px;
+        font-size: 13px;
+      }
+    }
+
+    .tabContent {
+      .membersTab {
+        .membersList {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .aboutTab {
+        .groupStats {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+
+    .modal {
+      padding: 16px;
+
+      .modalContent {
+        .modalHeader,
+        .modalBody,
+        .modalFooter {
+          padding: 16px 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .groupPage {
+    padding: 12px;
+
+    .groupHeader {
+      .groupBanner {
+        height: 150px;
+      }
+
+      .groupMainInfo {
+        padding: 16px;
+
+        .groupBasicInfo {
+          .groupTitleSection {
+            h1 {
+              font-size: 20px;
+            }
+
+            .groupMeta {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 8px;
+            }
+          }
+
+          .groupActions {
+            flex-direction: column;
+
+            button {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .groupNavigation {
+      .navTab {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+    }
+
+    .modal {
+      padding: 12px;
+
+      .modalContent {
+        .modalFooter {
+          flex-direction: column;
+
+          button {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

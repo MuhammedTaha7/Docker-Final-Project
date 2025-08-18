@@ -1,0 +1,45 @@
+.base-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.base-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.base-card.gradient {
+  color: white;
+}
+
+.base-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem 0 1.5rem;
+}
+
+.base-card-header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.base-card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  color: inherit;
+}
+
+.base-card-content {
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+}
+
+/* Remove padding from content when there's no header */
+.base-card:not(:has(.base-card-header)) .base-card-content {
+  padding: 1.5rem;
+}

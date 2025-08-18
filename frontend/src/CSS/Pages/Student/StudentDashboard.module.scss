@@ -1,0 +1,325 @@
+.dashboardPage {
+  width: 100%;
+  height: 100vh;
+  background: #f5f7fa;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboardContainer {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.studentSidebar {
+  width: 250px;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  overflow-y: auto;
+  flex-shrink: 0;
+
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #111827;
+  }
+}
+
+.sidebarButton {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  color: #111827;
+  text-align: left;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #f3f4f6;
+  }
+
+  &.activeTab {
+    background-color: #6c4be4;
+    color: white;
+    font-weight: 600;
+    border-color: transparent;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-direction: column !important;
+  gap: 1rem;
+}
+
+.filterLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.filterSelect {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #6c4be4;
+    box-shadow: 0 0 0 3px rgba(108, 75, 228, 0.1);
+  }
+}
+
+.gradButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.gradBtn {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  background: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: #374151;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: #f3f4f6;
+    border-color: #d1d5db;
+  }
+
+  &.selected {
+    background: #6d28d9;
+    color: white;
+    font-weight: 600;
+    border-color: #6d28d9;
+  }
+}
+
+.mainContent {
+  flex: 1;
+  padding: 2rem;
+  overflow: hidden;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboardHeader {
+  margin-bottom: 10px;
+  flex-shrink: 0;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+  }
+
+  p {
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+  }
+}
+
+.studentCardsHorizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-shrink: 0;
+}
+
+.studentCard {
+  flex: 1;
+  min-width: 200px;
+  padding: 1.2rem 1.5rem;
+  border-radius: 1rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  }
+
+  &.blue {
+    background: linear-gradient(135deg, #4f8dfd, #3b82f6);
+  }
+
+  &.green {
+    background: linear-gradient(135deg, #34d399, #10b981);
+  }
+
+  &.yellow {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  }
+
+  &.indigo {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  }
+}
+
+.studentCardInfo {
+  p {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    opacity: 0.9;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+  }
+}
+
+.studentCardIcon {
+  svg {
+    width: 32px;
+    height: 32px;
+    opacity: 0.8;
+  }
+}
+
+.tableSection {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.tableContainer {
+  flex: 1;
+  min-height: 0;
+  padding: 1rem;
+}
+
+.profileButton {
+  background: #e0f2fe;
+  border: 1px solid #38bdf8;
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #0284c7;
+
+  &:hover {
+    background: #bae6fd;
+    border-color: #0284c7;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  svg {
+    color: inherit;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .dashboardContainer {
+    flex-direction: column;
+  }
+
+  .studentSidebar {
+    width: 100%;
+    padding: 1rem;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    max-height: 200px;
+  }
+
+  .mainContent {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .studentCardsHorizontal {
+    flex-direction: column;
+  }
+
+  .studentCard {
+    min-width: auto;
+  }
+
+  .dashboardHeader {
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+    }
+  }
+
+  .tableContainer {
+    th,
+    td {
+      padding: 0.75rem 0.5rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboardPage {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .mainContent {
+    padding: 0.75rem;
+  }
+
+  .studentSidebar {
+    padding: 0.75rem;
+  }
+
+  .gradButtons {
+    gap: 0.25rem;
+  }
+
+  .gradBtn {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}

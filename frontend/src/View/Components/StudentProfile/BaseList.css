@@ -1,0 +1,68 @@
+/* Base List Component */
+.base-list {
+  width: 100%;
+}
+
+.base-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.base-list-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin: 0;
+}
+
+.base-list-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.base-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.base-list.compact .base-list-container {
+  gap: 0.5rem;
+}
+
+.base-list.cards .base-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.base-list-item {
+  transition: all 0.2s ease;
+}
+
+.base-list-item:hover {
+  transform: translateX(2px);
+}
+
+.base-list.cards .base-list-item:hover {
+  transform: translateY(-4px);
+}
+
+.base-list-empty {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+  font-style: italic;
+  border: 2px dashed #e5e7eb;
+  border-radius: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .base-list.cards .base-list-container {
+    grid-template-columns: 1fr;
+  }
+}

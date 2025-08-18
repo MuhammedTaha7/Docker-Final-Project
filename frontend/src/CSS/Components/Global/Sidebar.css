@@ -1,0 +1,183 @@
+/* ------------------------------ Sidebar Css ------------------------------ */
+/* Main sidebar container */
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: width 0.3s ease;
+  position: sticky;
+}
+
+/* Sidebar content container */
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+  position: absolute;
+  top: 10px;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+/* Sidebar header including profile image and username */
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-header .sidebar-profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.sidebar-header .sidebar-profile-username {
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Sidebar menu container */
+.sidebar-menu {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #0073ff #ffffff;
+  padding-bottom: 20px;
+}
+
+/* ------------------------------ Collapsed Sidebar ------------------------------ */
+/* Styles when the sidebar is collapsed */
+.sidebar.sidebar-collapsed {
+  width: 80px;
+}
+
+.sidebar.sidebar-collapsed .sidebar-profile-username,
+.sidebar.sidebar-collapsed .sidebar-profile-image {
+  display: none;
+}
+
+/* ------------------------------ SidebarItem Css ------------------------------ */
+/* Sidebar item container */
+.sidebar-item {
+  display: flex;
+  flex-direction: row;
+  color: #000000;
+  gap: 25px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-items: center;
+  margin: 5px 10px;
+  position: relative;
+}
+
+/* Sidebar icon inside items */
+.sidebar-icon {
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  color: inherit;
+}
+
+/* Sidebar item title */
+.sidebar-title {
+  flex-grow: 1;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+/* Sidebar notification badge */
+.sidebar-badge {
+  background: rgb(60, 60, 60);
+  color: white;
+  font-size: 16px;
+  padding: 3px 8px;
+  border-radius: 50%;
+}
+/* ------------------------------ Special format for right and left sidebar ------------------------------ */
+
+/* Sidebar toggle button positioning */
+.sidebar-right .sidebar-toggle {
+  right: 10px;
+}
+
+.sidebar-left .sidebar-toggle {
+  left: 10px;
+}
+
+
+/* Sidebar border radius based on position */
+.sidebar-right .sidebar-item {
+  border-radius: 0 20px 20px 0;
+  
+}
+
+
+
+
+/* Sidebar item alignment for right-positioned sidebar */
+
+.sidebar-right.sidebar-collapsed .sidebar-item {
+  margin-left: 0;
+}
+
+.sidebar-left.sidebar-collapsed .sidebar-item {
+  margin-right: 0;
+}
+
+/* ------------------------------ SidebarItem States ------------------------------ */
+/* Hover effect for sidebar items */
+
+/* Active sidebar item */
+.sidebar-item.active {
+  color: #0073ff;
+  font-weight: bold;
+  background: linear-gradient(to right, #0066ff6c 10%, rgba(214, 216, 255, 0.718) 90%);
+}
+  .sidebar-item.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background-color: rgba(0, 0, 255, 0.499);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .sidebar-item.active::before {
+    opacity: 1;
+  }
+
+/* transform animation effect for sidebar menu */
+.sidebar-item:hover .sidebar-icon,
+.sidebar-item:hover {
+  transform: scale(1.05);
+  color: #0073ff;
+}
+
+
+/* Special styling for chat-active sidebar item */
+.sidebar-item.chat-active {
+  background: rgba(0, 115, 255, 0.238);
+  color: #0073ff;
+  /* transform: none; */
+}

@@ -1,0 +1,90 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .login-form {
+    background-image: linear-gradient(
+        110deg,
+        white 0%,
+        white 50%,
+        transparent 50%
+      ),
+      url("../../Assets/Images/Logo/PNG/loginBackground.png");
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    height: 60%;
+    width: 90%;
+    padding: 30px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-images
+  {
+    h3{
+      position: absolute;
+      height: 65%;
+    width: 65%;
+    font-size: 24px;
+    line-height:30px ;
+    color: #fff;
+    }
+    position: relative;
+    width:50%;
+      flex-direction: column;
+      justify-content: center;
+      align-items:end;
+      
+  }
+  .bright-background
+  {
+    height: 70%;
+    width: 70%;
+  }
+  .student-background
+  {
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    bottom: -30px;
+    right: -60px;
+  }
+  .btn {
+    width: 70%;
+    border-radius: 10px;
+    height: 40px;
+    background: linear-gradient(to right, #9181F4 0%, #5038ED 100%); /* Corrected */
+    color: white; /* Ensures text is visible */
+    border: none; /* Optional: Removes border */
+    font-size: 16px; /* Optional: Adjust font size */
+    cursor: pointer; /* Optional: Adds hover effect */
+    transition: 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .btn:hover {
+    opacity: 0.8; /* Slight fade effect on hover */
+  }
+  .logo{
+    
+    height:45%;
+    width:45%;
+  }
+  
+  .error-container{
+    border-radius: 15px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgb(230, 100, 78);
+    height:40px;
+    box-shadow: #ed3838 0px 0px 5px; 
+    padding: 10px;
+    }

@@ -1,0 +1,49 @@
+/* StatCardsContainer.module.css */
+.statCardsContainer {
+  display: grid;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+/* Size-specific container adjustments */
+.compactContainer {
+  gap: 0.75rem;
+}
+
+.largeContainer {
+  gap: 2rem;
+}
+
+.xlContainer {
+  gap: 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .statCardsContainer {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .statCardsContainer {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  /* Force smaller gap on mobile for all sizes */
+  .xlContainer,
+  .largeContainer {
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .statCardsContainer {
+    gap: 0.75rem !important;
+  }
+  
+  .compactContainer {
+    gap: 0.5rem !important;
+  }
+}

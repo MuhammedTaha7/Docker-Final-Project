@@ -1,0 +1,150 @@
+.rightBar {
+  width: 100%;
+  max-width: 350px;
+  min-width: 350px; // Add this to prevent shrinking
+  height: 100vh;
+  overflow: auto;
+  background-color: #f5f5f5;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .rightBarMenus {
+    padding: 20px;
+
+    .item {
+      -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+      -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+      box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      background-color: white;
+      min-height: 80px; // Add minimum height to prevent collapse
+
+      span {
+        color: gray;
+        font-weight: 600;
+        font-size: 16px;
+        display: block;
+        margin-bottom: 15px;
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px 0px;
+        min-height: 40px; // Ensure consistent height
+        gap: 15px; // Add gap between userInfo and buttons
+
+        .userInfo {
+          display: flex;
+          align-items: center;
+          gap: 15px; // Increase gap between image and name
+          position: relative;
+          flex: 1;
+          min-width: 0; // Prevent flex item from overflowing
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0; // Prevent image from shrinking
+          }
+
+          .online {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: limegreen;
+            position: absolute;
+            top: 0;
+            left: 30px;
+          }
+
+          p {
+            color: gray;
+            margin: 0;
+            font-size: 14px;
+          }
+
+          span {
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            transition: color 0.2s ease;
+
+            &:hover {
+              color: #5271ff;
+            }
+          }
+        }
+
+        .buttons {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-shrink: 0; // Prevent buttons from shrinking
+          min-width: 130px; // Slightly increase space for buttons
+
+          button {
+            border: none;
+            padding: 8px 12px;
+            color: white;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+            min-width: 55px; // Slightly increase button width
+
+            &:hover {
+              opacity: 0.8;
+            }
+
+            &:first-child {
+              background-color: #5271ff;
+            }
+
+            &:last-child {
+              background-color: #f0544f;
+            }
+          }
+        }
+      }
+
+      // Empty state styles
+      .emptyState {
+        text-align: center;
+        padding: 20px 0;
+        min-height: 60px; // Maintain height even when empty
+        
+        p {
+          color: #999;
+          font-size: 14px;
+          font-style: italic;
+          margin: 0;
+        }
+      }
+
+      // Direct empty state paragraph (when used directly in JSX)
+      > p {
+        color: #999;
+        font-size: 14px;
+        font-style: italic;
+        text-align: center;
+        margin: 10px 0;
+        padding: 20px 10px; // Increase padding to maintain height
+        background-color: #fafafa;
+        border-radius: 8px;
+        border: 1px dashed #ddd;
+        min-height: 40px; // Ensure minimum height
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.course-details-container {
+    padding: 24px;
+    border-radius: 12px;
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.course-details-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.course-details-table td {
+    padding: 14px;
+    border-bottom: 1px solid #0288d1;
+}
+
+.lecturer-button {
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.lecturer-button:hover {
+    background-color: #0277bd;
+}
+
+.assignment-management, .announcements, .course-materials {
+    padding: 12px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+h3 {
+    color: #222;
+    margin-bottom: 12px;
+    font-size: 1.2em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 6px 0;
+    padding: 8px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+.course-details-table td.split-border {
+    border-left: 1px solid #0288d1;
+    padding-left: 12px;
+}

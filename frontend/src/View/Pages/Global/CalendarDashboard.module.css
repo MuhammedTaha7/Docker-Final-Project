@@ -1,0 +1,255 @@
+/* Main Container - Perfect Background Coverage */
+.calendarPageContainer {
+  
+  font-family: "Inter", "system-ui", "-apple-system", "sans-serif";
+  background-color: #f8fafc;
+  min-height: 100vh;
+  
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+/* Ensure body and html have no margins */
+
+
+/* Inner Wrapper for Content */
+.innerWrapper {
+  padding: 32px;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+}
+
+/* Header Section - Enhanced Styling */
+.header {
+  max-width: 1400px;
+  margin: 0 auto 48px auto;
+  text-align: center;
+  padding: 32px 0;
+  position: relative;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #3b82f6;
+  border-radius: 2px;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* Main Grid Layout */
+.gridLayout {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 32px;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Left Column - Weekly Calendar */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Right Column - Mini Calendar & Assignments */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+/* Assignments Container */
+.assignmentsContainer {
+  height: 750px;
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .innerWrapper {
+    padding: 24px;
+  }
+  
+  .header {
+    margin-bottom: 40px;
+    padding: 24px 0;
+  }
+  
+  .title {
+    font-size: 3rem;
+  }
+  
+  .subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .gridLayout {
+    grid-template-columns: 1fr 300px;
+    gap: 24px;
+  }
+  
+  .assignmentsContainer {
+    height: 650px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .innerWrapper {
+    padding: 20px;
+  }
+  
+  .header {
+    margin-bottom: 32px;
+    padding: 20px 0;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .gridLayout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .rightColumn {
+    flex-direction: row;
+    gap: 24px;
+  }
+  
+  .rightColumn > :first-child {
+    flex: 0 0 300px;
+  }
+  
+  .assignmentsContainer {
+    flex: 1;
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .innerWrapper {
+    padding: 16px;
+  }
+  
+  .header {
+    margin-bottom: 24px;
+    padding: 16px 0;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .gridLayout {
+    gap: 20px;
+  }
+  
+  .rightColumn {
+    flex-direction: column;
+  }
+  
+  .rightColumn > :first-child {
+    flex: none;
+  }
+  
+  .assignmentsContainer {
+    height: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .innerWrapper {
+    padding: 12px;
+  }
+  
+  .header {
+    padding: 12px 0;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+  }
+  
+  .subtitle {
+    font-size: 0.875rem;
+  }
+  
+  .gridLayout {
+    gap: 16px;
+  }
+  
+  .rightColumn {
+    gap: 16px;
+  }
+  
+  .assignmentsContainer {
+    height: 500px;
+  }
+}
+
+/* Ensure scrollbars match the theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
+}

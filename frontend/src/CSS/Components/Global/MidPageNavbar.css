@@ -1,0 +1,49 @@
+.mid-navbar {
+    
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 9999px;
+    padding: 10px 30px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .nav-link {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #8d8cf6;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    background-color: #ff6b6b;
+    color: #ffffff;
+  }
+  
+  .nav-link.active {
+    background-color: #fbc531;
+    color: #ffffff;
+  }
+  
+  .year-select {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #8d8cf6;
+    color: #8d8cf6;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .year-select:hover,
+  .year-select:focus {
+    border-color: #ff6b6b;
+    outline: none;
+  }
+  

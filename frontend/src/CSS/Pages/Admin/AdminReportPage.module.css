@@ -1,0 +1,452 @@
+/* Use camelCase for CSS module classes */
+.adminReportPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+  padding: 2rem 1rem;
+}
+
+.adminReportContainer {
+  margin: 0 20px;
+}
+
+.headerSection {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.headerIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background: #dbeafe;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.headerIcon svg {
+  width: 2rem;
+  height: 2rem;
+  color: #2563eb;
+}
+
+.reportHeaderTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.headerSubtitle {
+  color: #6b7280;
+  max-width: 32rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contentCard {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.querySection {
+  padding: 2rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.queryLabel {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.textareaWrapper {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.queryTextarea {
+  width: 100%;
+  padding: 1rem 3rem 1rem 1rem;
+  color: #111827;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.queryTextarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6;
+  border-color: transparent;
+}
+
+.queryTextarea::placeholder {
+  color: #9ca3af;
+}
+
+.textareaIcon {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  pointer-events: none;
+}
+
+.textareaIcon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #9ca3af;
+}
+
+.generateButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.generateButton svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.generateButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+}
+
+.generateButton:disabled,
+.generateButton.loading {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.generateButton .spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #9ca3af;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.errorSection {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.errorAlert {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.75rem;
+}
+
+.errorIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #ef4444;
+}
+
+.errorText {
+  color: #b91c1c;
+  font-weight: 500;
+  margin: 0;
+}
+
+.successSection {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.successAlert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 0.75rem;
+}
+
+.successContent {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.successIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #22c55e;
+}
+
+.successText .successTitle {
+  color: #15803d;
+  font-weight: 500;
+  margin: 0 0 0.25rem 0;
+}
+
+.successText .successSubtitle {
+  color: #16a34a;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.downloadButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.downloadButton svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.downloadButton:hover {
+  background: #15803d;
+}
+
+.tableSection .tableHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem 1rem 2rem;
+}
+
+.tableSection .tableTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.tableSection .tableInfo .recordCount {
+  font-size: 0.875rem;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+}
+
+.tableSection .tableContainer {
+  max-height: 400px;
+  overflow: auto;
+  margin: 0 2rem 2rem 2rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+}
+
+.tableSection .resultTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.tableSection .resultTable thead {
+  position: sticky;
+  top: 0;
+  background: #f9fafb;
+}
+
+.tableSection .resultTable th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.tableSection .resultTable tbody tr:hover {
+  background: #f9fafb;
+}
+
+.tableSection .resultTable td {
+  padding: 0.75rem 1rem;
+  color: #6b7280;
+  border-bottom: 1px solid #f3f4f6;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.recentReportsCard {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+}
+
+.recentReportsSection {
+  padding: 2rem;
+}
+
+.sectionHeader {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+}
+
+.sectionSubtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.loadingSpinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  color: #6b7280;
+}
+
+.loadingSpinner .spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #e5e7eb;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.tableWrapper {
+  overflow-x: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+.tableWrapper table {
+  min-width: 100%;
+  font-size: 0.875rem;
+}
+
+.actionBtn {
+  padding: 0.375rem 0.75rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  white-space: nowrap;
+}
+
+.actionBtn:last-child {
+  margin-right: 0;
+}
+
+.actionBtnViewBtn {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.actionBtnViewBtn:hover {
+  background-color: #2563eb;
+}
+
+.actionBtnDownloadBtn {
+  background-color: #10b981;
+  color: white;
+}
+
+.actionBtnDownloadBtn:hover {
+  background-color: #059669;
+}
+
+.actionBtnRegenerateBtn {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.actionBtnRegenerateBtn:hover {
+  background-color: #d97706;
+}
+
+@media (max-width: 768px) {
+  .adminReportPage {
+    padding: 1rem 0.5rem;
+  }
+
+  .adminReportContainer .contentCard {
+    max-width: 100%;
+    margin: 0 0 2rem 0;
+  }
+
+  .recentReportsCard .recentReportsSection {
+    padding: 1rem;
+  }
+
+  .tableWrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .actionBtn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    margin-right: 0.25rem;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Additional nested selector styles */
+.successText .successTitle {
+  color: #15803d;
+  font-weight: 500;
+  margin: 0 0 0.25rem 0;
+}
+
+.successText .successSubtitle {
+  color: #16a34a;
+  font-size: 0.875rem;
+  margin: 0;
+}

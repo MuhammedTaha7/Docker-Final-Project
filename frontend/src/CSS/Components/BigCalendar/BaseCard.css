@@ -1,0 +1,83 @@
+.base-card {
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.base-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e1;
+}
+
+.base-card.gradient {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.base-card.outline {
+  background: transparent;
+  border: 2px solid #e5e7eb;
+}
+
+.base-card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.base-card.gradient .base-card-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.base-card-title-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.base-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.base-card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.base-card.gradient .base-card-title {
+  color: white;
+}
+
+.base-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.base-card-body {
+  padding: 1.5rem;
+}
+
+.base-card[onclick] {
+  cursor: pointer;
+}
+
+.base-card.compact .base-card-header,
+.base-card.compact .base-card-body {
+  padding: 1rem;
+}
+
+.base-card.large .base-card-header,
+.base-card.large .base-card-body {
+  padding: 2rem;
+}

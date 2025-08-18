@@ -1,0 +1,834 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  height: 50px;
+  border-bottom: 1px solid themed("border");
+  position: sticky;
+  top: 0;
+  background-color: themed("bg");
+  color: themed("textColor");
+  z-index: 999;
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    span {
+      font-weight: bold;
+      font-size: 20px;
+      color: themed("logo");
+    }
+
+    .searchContainer {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      .search {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 2px solid themed("border");
+        border-radius: 25px;
+        padding: 8px 16px;
+        background: themed("bgSoft");
+        transition: all 0.3s ease;
+        position: relative;
+        width: 500px;
+
+        &:focus-within {
+          border-color: #5271ff;
+          box-shadow: 0 0 0 3px rgba(82, 113, 255, 0.1);
+          background: themed("bg");
+        }
+
+        .searchIcon {
+          color: themed("textColorSoft");
+          font-size: 20px;
+          transition: color 0.2s ease;
+        }
+
+        &:focus-within .searchIcon {
+          color: #5271ff;
+        }
+
+        input {
+          border: none;
+          flex: 1;
+          background-color: transparent;
+          color: themed("textColor");
+          font-size: 14px;
+          outline: none;
+          padding: 4px 0;
+
+          &::placeholder {
+            color: themed("textColorSoft");
+            font-style: italic;
+          }
+
+          &.searching {
+            padding-right: 30px;
+          }
+        }
+
+        .searchLoader {
+          position: absolute;
+          right: 40px;
+          width: 16px;
+          height: 16px;
+          border: 2px solid themed("border");
+          border-top: 2px solid #5271ff;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        }
+
+        .clearSearchIcon {
+          color: themed("textColorSoft");
+          font-size: 18px;
+          cursor: pointer;
+          padding: 2px;
+          border-radius: 50%;
+          transition: all 0.2s ease;
+
+          &:hover {
+            color: #ff4757;
+            background: rgba(255, 71, 87, 0.1);
+          }
+        }
+      }
+
+      .searchResultsDropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+        border: 1px solid #e0e0e0;
+        z-index: 1000;
+        margin-top: 8px;
+        overflow: hidden;
+        max-height: 500px;
+
+        .searchResultsHeader {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 16px 20px;
+          background: #f8f9fa;
+          border-bottom: 1px solid #e0e0e0;
+
+          span:first-child {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+          }
+
+          .resultCount {
+            font-size: 12px;
+            color: #666;
+            background: rgba(82, 113, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 12px;
+          }
+        }
+
+        .searchResultsList {
+          max-height: 400px;
+          overflow-y: auto;
+
+          .searchResultItem {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+            &:hover {
+              background: #f8f9fa;
+              transform: translateY(-1px);
+            }
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            .userAvatar {
+              position: relative;
+              flex-shrink: 0;
+
+              img {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid themed("border");
+              }
+
+              .roleIconContainer {
+                position: absolute;
+                bottom: -2px;
+                right: -2px;
+                background: white;
+                border-radius: 50%;
+                padding: 4px;
+                border: 2px solid #e0e0e0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .roleIcon {
+                  font-size: 14px;
+
+                  &.student {
+                    color: #2ecc71;
+                  }
+
+                  &.lecturer {
+                    color: #3498db;
+                  }
+
+                  &.admin {
+                    color: #e74c3c;
+                  }
+                }
+              }
+            }
+
+            .userInfo {
+              flex: 1;
+              min-width: 0;
+
+              .userName {
+                font-weight: 600;
+                font-size: 16px;
+                color: #333;
+                margin-bottom: 4px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+
+              .userDetails {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                margin-bottom: 2px;
+
+                .userRole {
+                  font-size: 12px;
+                  font-weight: 500;
+                  padding: 2px 8px;
+                  border-radius: 12px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.5px;
+                  background: rgba(46, 204, 113, 0.1);
+                  color: #2ecc71;
+                }
+
+                .userDepartment {
+                  font-size: 12px;
+                  color: #666;
+                }
+              }
+
+              .userEmail {
+                font-size: 12px;
+                color: #666;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+            }
+
+            .userActions {
+              flex-shrink: 0;
+
+              .viewProfileIcon {
+                color: #666;
+                font-size: 20px;
+                transition: color 0.2s ease;
+
+                &:hover {
+                  color: #5271ff;
+                }
+              }
+            }
+          }
+
+          .noResults {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding: 40px 20px;
+            text-align: center;
+
+            .noResultsIcon {
+              font-size: 48px;
+              color: #999;
+              opacity: 0.5;
+            }
+
+            span {
+              font-weight: 500;
+              color: #333;
+              font-size: 16px;
+            }
+
+            small {
+              color: #666;
+              font-size: 12px;
+            }
+          }
+        }
+
+        .searchResultsFooter {
+          padding: 16px 20px;
+          background: #f8f9fa;
+          border-top: 1px solid #e0e0e0;
+
+          .viewAllResultsBtn {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 1px solid #e0e0e0;
+            color: #333;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+
+            &:hover {
+              background: #5271ff;
+              color: white;
+              border-color: #5271ff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .chatContainer {
+      position: relative;
+
+      .chatIcon {
+        position: relative;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 50%;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background: themed("bgSoft");
+        }
+
+        .chatBadge {
+          position: absolute;
+          top: 0;
+          right: 0;
+          background: #ff4757;
+          color: white;
+          border-radius: 50%;
+          width: 18px;
+          height: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 10px;
+          font-weight: bold;
+          border: 2px solid themed("bg");
+        }
+      }
+
+      .chatDropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 350px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+        border: 1px solid themed("border");
+        z-index: 1000;
+        margin-top: 8px;
+        overflow: hidden;
+        border-color: #333;
+
+        .chatHeader {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 16px 20px;
+          background: themed("bgSoft");
+          border-bottom: 3px solid rgba(0, 0, 0, 0.212);
+
+          h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: themed("textColor");
+            margin: 0;
+          }
+
+          .closeIcon {
+            cursor: pointer;
+            color: themed("textColorSoft");
+            transition: color 0.2s ease;
+
+            &:hover {
+              color: #ff4757;
+            }
+          }
+        }
+
+        .chatList {
+          max-height: 400px;
+          overflow-y: auto;
+
+          .chatItem {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 3px solid rgba(0, 0, 0, 0.212);
+            position: relative;
+
+            &:hover {
+              background: themed("bgSoft");
+            }
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            &.hasUnread {
+              background: rgba(82, 113, 255, 0.05);
+            }
+
+            &.empty {
+              justify-content: center;
+              padding: 40px 20px;
+              cursor: default;
+
+              span {
+                color: themed("textColorSoft");
+                font-style: italic;
+              }
+            }
+
+            .chatAvatar {
+              position: relative;
+              flex-shrink: 0;
+
+              img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid themed("border");
+              }
+
+              .avatarBadge {
+                position: absolute;
+                top: -2px;
+                right: -2px;
+                background: #ff4757;
+                color: white;
+                border-radius: 50%;
+                width: 18px;
+                height: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 10px;
+                font-weight: bold;
+                border: 2px solid themed("bg");
+              }
+            }
+
+            .chatContent {
+              flex: 1;
+              min-width: 0;
+
+              .chatName {
+                font-weight: 600;
+                font-size: 14px;
+                color: themed("textColor");
+                margin-bottom: 4px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+
+              .chatStatus {
+                font-size: 12px;
+                color: themed("textColorSoft");
+
+                .unreadIndicator {
+                  color: #5271ff;
+                  font-weight: 500;
+                }
+              }
+            }
+
+            .unreadDot {
+              width: 8px;
+              height: 8px;
+              background: #5271ff;
+              border-radius: 50%;
+              flex-shrink: 0;
+            }
+          }
+        }
+
+        .chatFooter {
+          padding: 16px 20px;
+          background: themed("bgSoft");
+          border-top: 1px solid themed("border");
+
+          .viewAllChatsBtn {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 1px solid themed("border");
+            color: themed("textColor");
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+
+            &:hover {
+              background: #5271ff;
+              color: white;
+              border-color: #5271ff;
+            }
+          }
+        }
+      }
+    }
+
+    .notificationContainer {
+      position: relative;
+
+      .notificationIcon {
+        position: relative;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 50%;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background: themed("bgSoft");
+        }
+
+        .notificationBadge {
+          position: absolute;
+          top: 0;
+          right: 0;
+          background: #ff4757;
+          color: white;
+          border-radius: 50%;
+          width: 18px;
+          height: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 10px;
+          font-weight: bold;
+          border: 2px solid themed("bg");
+        }
+      }
+
+      .notificationDropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 400px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+        border: 1px solid themed("border");
+        z-index: 1000;
+        margin-top: 8px;
+        overflow: hidden;
+
+        .notificationHeader {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 16px 20px;
+          background: themed("bgSoft");
+          border-bottom: 3px solid rgba(0, 0, 0, 0.212);
+
+          h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: themed("textColor");
+            margin: 0;
+          }
+
+          .closeIcon {
+            cursor: pointer;
+            color: themed("textColorSoft");
+            transition: color 0.2s ease;
+
+            &:hover {
+              color: #ff4757;
+            }
+          }
+        }
+
+        .notificationList {
+          max-height: 400px;
+          overflow-y: auto;
+
+          .notificationItem {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 3px solid rgba(0, 0, 0, 0.212);
+            position: relative;
+
+            &:hover {
+              background: themed("bgSoft");
+            }
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            &.unread {
+              background: rgba(82, 113, 255, 0.05);
+            }
+
+            &.loading {
+              justify-content: center;
+              padding: 40px 20px;
+              cursor: default;
+
+              .loadingSpinner {
+                width: 20px;
+                height: 20px;
+                border: 2px solid themed("border");
+                border-top: 2px solid #5271ff;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+                margin-right: 10px;
+              }
+
+              span {
+                color: themed("textColorSoft");
+              }
+            }
+
+            &.empty {
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 40px 20px;
+              cursor: default;
+
+              .emptyIcon {
+                font-size: 48px;
+                color: themed("textColorSoft");
+                opacity: 0.5;
+                margin-bottom: 12px;
+              }
+
+              span {
+                color: themed("textColorSoft");
+                font-style: italic;
+              }
+            }
+
+            .notificationAvatar {
+              position: relative;
+              flex-shrink: 0;
+
+              img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid themed("border");
+              }
+
+              .notificationTypeIcon {
+                position: absolute;
+                bottom: -2px;
+                right: -2px;
+                background: themed("bg");
+                border-radius: 50%;
+                padding: 4px;
+                border: 2px solid themed("border");
+                font-size: 12px;
+                color: #5271ff;
+              }
+            }
+
+            .notificationContent {
+              flex: 1;
+              min-width: 0;
+
+              .notificationTitle {
+                font-weight: 600;
+                font-size: 14px;
+                color: themed("textColor");
+                margin-bottom: 4px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+
+              .notificationMessage {
+                font-size: 12px;
+                color: themed("textColorSoft");
+                margin-bottom: 4px;
+                line-height: 1.4;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+              }
+
+              .notificationTime {
+                font-size: 10px;
+                color: themed("textColorSoft");
+                opacity: 0.8;
+              }
+            }
+
+            .unreadDot {
+              width: 8px;
+              height: 8px;
+              background: #5271ff;
+              border-radius: 50%;
+              flex-shrink: 0;
+            }
+          }
+        }
+
+        .notificationFooter {
+          padding: 16px 20px;
+          background: themed("bgSoft");
+          border-top: 1px solid themed("border");
+          display: flex;
+          gap: 12px;
+
+          .markAllReadBtn,
+          .viewAllBtn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            font-size: 12px;
+          }
+
+          .markAllReadBtn {
+            background: transparent;
+            border: 1px solid themed("border");
+            color: themed("textColor");
+
+            &:hover {
+              background: themed("bgSoft");
+            }
+          }
+
+          .viewAllBtn {
+            background: #5271ff;
+            border: 1px solid #5271ff;
+            color: white;
+
+            &:hover {
+              background: #4053cc;
+            }
+          }
+        }
+      }
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+      cursor: pointer;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      span {
+        color: themed("textColor");
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+
+    .left {
+      gap: 15px;
+
+      .searchContainer .search {
+        width: 300px;
+      }
+    }
+
+    .right {
+      gap: 15px;
+
+      .user span {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    .left {
+      .searchContainer .search {
+        width: 200px;
+      }
+    }
+
+    .right {
+      .chatContainer .chatDropdown,
+      .notificationContainer .notificationDropdown {
+        width: calc(100vw - 40px);
+        right: -100px;
+      }
+    }
+  }
+}
