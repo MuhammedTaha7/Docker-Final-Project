@@ -1,54 +1,39 @@
-package com.example.backend;
-
+import com.example.backend.LoginAppApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
+import org.testcontainers.containers.MongoDBContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
-@SpringBootTest(properties = {
-    // Application settings
-    "spring.application.name=loginApp",
-    "server.address=0.0.0.0",
-    "spring.main.web-application-type=servlet",
-    "spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration",
-    
-    // Logging settings
-    "logging.level.org.springframework.security=DEBUG",
-    "logging.level.org.springframework.web=DEBUG",
-    
-    // Mail settings
-    "spring.mail.host=smtp.gmail.com",
-    "spring.mail.port=587",
-    "spring.mail.username=test-email@gmail.com",
-    "spring.mail.password=test-password",
-    "spring.mail.properties.mail.smtp.auth=true",
-    "spring.mail.properties.mail.smtp.starttls.enable=true",
-    
-    // OpenAI settings (using test values)
-    "openai.api.key=test-api-key",
-    "openai.api.url=https://api.openai.com/v1/chat/completions",
-    
-    // File upload settings
+@Testcontainers
+@SpringBootTest(classes = LoginAppApplication.class, properties = {
     "app.upload.dir=uploads",
     "app.base.url=http://localhost:8080",
-    "spring.servlet.multipart.max-file-size=10MB",
-    "spring.servlet.multipart.max-request-size=10MB",
-    
-    // MongoDB test configuration (using embedded or mock)
-    "spring.data.mongodb.uri=mongodb://localhost/testdb"
+    "spring.data.mongodb.uri=mongodb://test-uri/testdb",
+    "spring.mail.host=smtp.gmail.com",
+    "spring.mail.port=587",
+    "spring.mail.username=your-email@gmail.com",
+    "spring.mail.password=your-app-password",
+    "openai.api.key=sk-proj-...",
+    "openai.api.url=https://api.openai.com/v1/chat/completions"
 })
 class LoginAppApplicationTests {
 
-    @MockBean
-    private JavaMailSender javaMailSender;
+    @Container
+    static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:4.4.2");
 
-    @MockBean
-    private MongoTemplate mongoTemplate;
+    @DynamicPropertySource
+    static void setProperties(DynamicPropertyRegistry registry) {
+        registry.add("spring.data.mongodb.uri", mongoDBContainer::getReplicaSetUrl);
+        registry.add("app.upload.dir", () -> "uploads");
+        registry.add("app.base.url", () -> "http://localhost:8080");
+        registry.add("openai.api.key", () -> "test-api-key");
+        registry.add("openai.api.url", () -> "https://api.openai.com/v1/chat/completions");
+    }
 
     @Test
     void contextLoads() {
-        // This test will verify that the Spring application context loads successfully
-        // with all the configured properties and mocked beans
     }
 }
