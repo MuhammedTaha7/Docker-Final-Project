@@ -1,7 +1,6 @@
 version: '3.8'
 services:
   backend:
-    # Remove this line: image: openjdk:17-jdk-alpine
     container_name: backend
     build:
       context: ./backend
@@ -9,9 +8,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      # Use MongoDB Atlas connection string
       - SPRING_DATA_MONGODB_URI=mongodb+srv://zedanmhmd41:Cw6cRYS0UOVe8VjS@education-platform.yl1ruff.mongodb.net/eduSphereData?retryWrites=true&w=majority&appName=education-platform
-    # Remove depends_on since we're not using local mongo anymore
     networks:
       - app-network
   frontend:
@@ -20,14 +17,9 @@ services:
       dockerfile: Dockerfile
     container_name: frontend
     ports:
-      - "3000:80"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
+      - "80:80"
     networks:
       - app-network
-  # Remove the local mongo service entirely since we're using Atlas
 networks:
   app-network:
     driver: bridge
-# Remove mongo-data volume since we're not using local MongoDB
